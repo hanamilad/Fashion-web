@@ -12,7 +12,7 @@ function Header() {
   const [list,setlist]=useState(["Women","Men"])
   const [data, setData] = useState([]);
 
-  const storedData = JSON.parse(localStorage.getItem('products'));
+  const storedData = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('products')) : [];
   const shopslide=()=>{
     SetOpencart(!IsOpencart)
     setData(JSON.parse(localStorage.getItem('products')) || []);
