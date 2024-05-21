@@ -5,24 +5,16 @@ import data from '../_components/json.json'
 
 function Searchpage() {
   const [value,setvalue]=useState()
-  const [Data,setData]=useState()
+  const [Data,setData]=useState([])
   const valueSearch = useRef()
   const handelchange = () => {
     setvalue(valueSearch.current.value)
-    showreslt()
   }
-  const showreslt=()=>{
-    const filterdata = data.filter((ele) => ele.name.trim().length > 0 && ele.name.includes(value));
-    if(filterdata.length !== 0){
-      setData(filterdata)
-    }else{
-      setData([])
-    }
-  }
+ 
   useEffect(()=>{ 
-    handelchange()
-    showreslt()
-    },[])
+    const filterdata = data.filter((ele) =>value && ele.name.includes(value.trim()));
+    setData(filterdata)
+    },[value])
 
   return (
 <>

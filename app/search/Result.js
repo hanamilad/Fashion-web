@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 
 
 function Result({value,Data}) {
-  const [Result,setResult]= useState()
+  const [Result,setResult]= useState([])
 
   useEffect(() => {
     setResult(Data)
