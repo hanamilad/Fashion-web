@@ -14,14 +14,14 @@ function Cart() {
 
 
   useEffect(() => {
-    const storedData = JSON.parse(localStorage.getItem('products'));
+    const storedData = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('products')) : [];
     setData(storedData || [])
     calculateCartTotal()
   }, []);
 
   const calculateCartTotal = () => {
     let total = 0;
-    const Data=JSON.parse(localStorage.getItem("products"))
+    const Data = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('products')) : [];
     for (const item of Data) {
       total += +item.price;
     }

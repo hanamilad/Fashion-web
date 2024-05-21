@@ -22,7 +22,7 @@ function Page({params}) {
 
 const Addproductitem = () => {
   if (isSignedIn) {
-    const storedProducts = JSON.parse(localStorage.getItem("products")) || [];
+    const storedProducts = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('products')) : [];
     const isProductExist = storedProducts.some((product) => product.id === data.id);
 
     if (!isProductExist) {
