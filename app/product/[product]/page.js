@@ -67,20 +67,6 @@ const Addproductitem = () => {
       <li>Classic style fits any outfit.</li>
       <li>Express yourself with our unique designs.</li>
     </ul>
-    <div className='flex gap-4 justify-center'>
-    <div>
-    <input type="radio" id="size" name="size" value="small" />
-<label for="size">Small</label>
-    </div>
-<div>
-<input type="radio" id="medium" name="size" value="medium" />
-<label for="medium">Medium</label>
-</div>
-<div>
-<input type="radio" id="large" name="size" value="large" />
-<label for="large">Large</label>
-</div>
-    </div>
     <div className='flex justify-around  mt-6 max-sm:flex-col gap-4'>
       <div className='font-extrabold'>
       Price: <span className='bg-green-950 text-white border-2 p-2 rounded-md'>${data.price}</span> <span className='line-through text-red-800'> $ {+data.price + 500}</span>
@@ -90,7 +76,6 @@ const Addproductitem = () => {
 
 
     </div>
-
 
     </div>
   )

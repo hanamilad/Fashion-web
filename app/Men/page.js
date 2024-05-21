@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 
 function Men() {
-    const data=Alldata.filter((ele)=>ele.name.startsWith("m"))
+    const data=Alldata.filter((ele)=>ele.name.startsWith("M"))
     const [items,setitems]=useState(data)
   return (
 
