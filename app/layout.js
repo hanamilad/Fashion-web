@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className} suppressHydrationWarning={true}>
 
-      {/* <Header /> */}
+      <Header />
     <div className="pt-[70px]">  {children }</div>
       <Footer />
       </body>

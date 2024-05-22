@@ -12,11 +12,10 @@ function Header() {
   const [list,setlist]=useState(["Women","Men"])
   const [data, setData] = useState([]);
 
-  const storedData = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('products')) : [];
   const shopslide=()=>{
     SetOpencart(!IsOpencart)
     setData(JSON.parse(localStorage.getItem('products')) || []);
- 
+    
   } 
  
   useEffect(()=>{
@@ -85,7 +84,7 @@ function Header() {
       </li>
       <li className='cursor-pointer hover:bg-gray-400 rounded-lg relative p-2'   onClick={shopslide}>
       <ShoppingCart size={25} strokeWidth={1} />
-      <span className='absolute top-[-6px] right-[-4px]   text-black font-extrabold'>{storedData.length}</span>
+      <span className='absolute top-[-6px] right-[-4px]   text-black font-extrabold'>{data.length}</span>
 
       </li>
       <li>
