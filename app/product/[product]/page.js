@@ -20,42 +20,16 @@ function Page({params}) {
   const [data,setdata]=useState(ele[0])
 
 
-// const Addproductitem = () => {
-//   if (isSignedIn) {
-//     const storedProducts = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('products')) : [];
-//     const isProductExist = storedProducts.filter((product) => product.id === data.id);
 
-//     if (!isProductExist) {
-//       storedProducts.push(data);
-//       localStorage.setItem("products", JSON.stringify(storedProducts));    
-//       Swal.fire({
-//         title: 'success',
-//         text: 'Done',
-//         icon: 'success',
-//         confirmButtonText: 'Cool'
-//       })
-//     } else {
-//       Swal.fire({
-//         title: 'warning!',
-//         text: 'Product already exists in your Cart',
-//         icon: 'warning',
-//         confirmButtonText: 'Cool'
-//       })
-//       console.log("Product already exists in localStorage");
-//     }
-//   } else {
-//     router.push("/sign-up");
-//   }
-// };
 
 const Addproductitem = () => {
   if (isSignedIn) {
     const storedProducts = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('products')) : [];
     
-    if (storedProducts) { // Check if storedProducts is not null
+    if (storedProducts) { 
       const isProductExist = storedProducts.filter((product) => product.id === data.id);
 
-      if (!isProductExist || isProductExist.length === 0) { // Check if isProductExist is empty
+      if (!isProductExist || isProductExist.length === 0) { 
         storedProducts.push(data);
         localStorage.setItem("products", JSON.stringify(storedProducts));    
         Swal.fire({
@@ -74,7 +48,6 @@ const Addproductitem = () => {
         console.log("Product already exists in localStorage");
       }
     } else {
-      // If storedProducts is null, initialize it as an empty array
       const storedProducts = [];
       storedProducts.push(data);
       localStorage.setItem("products", JSON.stringify(storedProducts));    
